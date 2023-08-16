@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     gap: 0;
-    border: solid black 0.5px;
+    border: solid rgb(0, 0, 0) 0.5px;
 }
 .grid{
     width: 31.2px;

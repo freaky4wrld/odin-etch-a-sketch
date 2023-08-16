@@ -2,9 +2,9 @@ const gridContainer = document.querySelector('.container');
 const gridSmallBtn = document.getElementById('small-btn');
 const gridMediumBtn = document.getElementById('medium-btn');
 const gridLargeBtn = document.getElementById('large-btn');
-
+const gridClearBtn = document.getElementById('clear-btn')
 gridSizeTogglerMain()
-
+gridClearBtn.addEventListener('click', eraseGrid);
 // provide size-changing functionality to buttons
 function gridSizeTogglerMain(){
     createGrid(16,31.2);
@@ -12,6 +12,7 @@ function gridSizeTogglerMain(){
     gridMediumBtn.addEventListener('click', ()=>{resetGrid();createGrid(32,15.6)});
     gridLargeBtn.addEventListener('click', ()=>{resetGrid();createGrid(50,10)});    
 }
+
 
 
 // to color the grid
@@ -44,5 +45,11 @@ function createGrid(gridCount,gridSize){
 function resetGrid(){
     Array.from(gridContainer.children).forEach((item)=>{
         item.remove();
+    })
+}
+
+function eraseGrid(){
+    Array.from(gridContainer.children).forEach((item)=>{
+        item.style.backgroundColor = '#fff';
     })
 }

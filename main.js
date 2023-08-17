@@ -5,6 +5,8 @@ const gridLargeBtn = document.getElementById('large-btn');
 const gridClearBtn = document.getElementById('clear-btn');
 const gridBlackBtn = document.getElementById('black-btn');
 const gridEraseBtn = document.getElementById('erase-btn');
+const gridShadeBtn = document.getElementById('shade-btn');
+const gridTranceBtn = document.getElementById('trance-btn');
 gridSizeTogglerMain()
 gridClearBtn.addEventListener('click', eraseGrid);
 // provide size-changing functionality to buttons
@@ -16,9 +18,11 @@ function gridSizeTogglerMain(){
 }
 
 function gridColorTogglerMain(){
-    colorGrid('#333');
-    gridBlackBtn.addEventListener('click', ()=>{colorGrid('black')})
+    colorGrid('#555');
+    gridBlackBtn.addEventListener('click', ()=>{colorGrid('black');})
     gridEraseBtn.addEventListener('click', ()=>{colorGrid('white');})
+    gridShadeBtn.addEventListener('click', ()=>{shadeGrid();})
+    // gridTranceBtn.addEventListener('click', ()=>{tranceGrid();})
 }
 
 
@@ -28,6 +32,7 @@ function colorGrid(gridColor){
     Array.from(gridBox).forEach((item)=>{
     item.addEventListener('mouseenter', (event)=>{
     event.target.style.backgroundColor = `${gridColor}`;
+    event.target.style.opacity=1;
     })
 })
 }
@@ -55,23 +60,42 @@ function resetGrid(){
     })
 }
 
-// to erase the grid content
+// to clear the grid content
 function eraseGrid(){
     Array.from(gridContainer.children).forEach((item)=>{
         item.style.backgroundColor = '#fff';
+        item.style.opacity=1;
     })
 }
 
-// function shadeGrid(counter=0.2){
-//     colorGrid()
-//     Array.from(gridContainer.children).forEach((item)=>{
-//         item.addEventListener('mouseenter', (event)=>{
-//             console.log(counter);
-//             event.target.style.opacity = `${0.1+counter}`;
-//             console.log("event",event.target.style.opacity);
-//             counter+=0.15;
-//             console.log(counter);
-//             setTimeout(shadeGrid.bind(counter),100);
-//             })  
+// to provide the shade functionality to grid
+function shadeGrid(){
+    Array.from(gridContainer.children).forEach((item)=>{
+        item.count=0;
+        item.addEventListener('mouseenter', (e)=>{
+            e.target.style.backgroundColor = '#333';
+            e.target.count += 1;
+            e.target.style.opacity = 0.2 * e.target.count;
+        })
+    })
+
+}
+// function tranceGrid(condition=false){
+//     const tranceColor = ['#fd00ff','#fdff00','#00ff38', '#00f9ff', '#3c00ff']
+//     let random = Math.floor(Math.random()*tranceColor.length);
+//     var gridBox = document.querySelectorAll('.grid');
+//     Array.from(gridBox).forEach((item)=>{
+//     item.addEventListener('mouseenter', (event)=>{
+//     event.target.style.backgroundColor = `${tranceColor[random]}`;
+//     event.target.style.opacity=1;
+//     setTimeout(tranceGrid,50);
 //     })
+// })
 // }
+
+// window scroll
+// window.addEventListener('scroll', ()=>{
+//     const optionsList = document.querySelector('.options');
+//     optionsList.classList.toggle('animate__animated');
+//     optionsList.classList.toggle('animate__backInUp');
+// })

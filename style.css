@@ -1,11 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Bentham&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    /* background-image: linear-gradient(-150deg,#2c3e50, #7f8c8d, #34495e); */
+    background-color: #2c3e50;
+}
+#heading{
+    font-family: 'Limelight', cursive;
+    text-align: center;
+    border: groove black 4px;
+    padding: 0.7rem;
+    width: 30%;
+    margin: 1rem auto;
+    background-color: #ecf0f1;
+    color: #bdc3c7;
+}
+.container-border{
+    width: 550px;
+    height: 550px;
+    margin: 2rem auto;
+    /* padding: 1rem; */
+    border: ridge rgb(155, 150, 150) 5px;
+    background-color: #7f8c8d;
+    animation-delay: 1.2s;
+}
 
 .container{
-    margin: 5rem auto;
+    margin: 1.3rem auto;
     width: 500px;
     height: 500px;
     /* background-color: red; */
@@ -16,10 +42,65 @@
     align-items: center;
     gap: 0;
     border: solid rgb(0, 0, 0) 0.5px;
+    background-color: white;
 }
 .grid{
     width: 31.2px;
     height: 31.2px;
-    border: solid black 1px;
+    border: solid black 0.2px;
     margin: 0;
+}
+
+.options{
+    width: 60%;
+    margin: 0.5rem auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(45, 52, 54,0.8);
+    border-radius: 0 21px 0 21px;
+    animation-delay: 1s;
+}
+
+.btn{
+    padding: 0.4rem;
+    background-color: #a4b0be;
+    color: #1e272e;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Bentham', serif;
+    border: ridge #747d8c 3px;
+    border-radius: 7px 0 7px 0;
+}
+.btn:hover{
+    transform: scale(90%);
+}
+#small-btn{ 
+    padding: 0.36rem;
+    font-size: 0.85rem;
+}
+#medium-btn{ 
+    font-size: 1rem;
+}
+#large-btn{ 
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+#clear-btn:hover{ 
+    color: #a4b0be;;
+}
+#erase-btn:hover{
+    background-color: #f1f2f6;
+}
+#black-btn:hover{
+    color: #f1f2f6;
+    background-color: black;
+}
+#shade-btn:hover{
+    background-color: rgba(164, 176, 190,0.4);
+}
+#trance-btn:hover{
+    background-image: linear-gradient(to right, #fd00ff,#fdff00,#00ff38, #00f9ff, #3c00ff);
+    border-color: #fd00ff #fdff00 #00ff38 #00f9ff;
 }

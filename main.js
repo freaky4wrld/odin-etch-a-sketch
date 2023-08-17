@@ -22,7 +22,7 @@ function gridColorTogglerMain(){
     gridBlackBtn.addEventListener('click', ()=>{colorGrid('black');})
     gridEraseBtn.addEventListener('click', ()=>{colorGrid('white');})
     gridShadeBtn.addEventListener('click', ()=>{shadeGrid();})
-    // gridTranceBtn.addEventListener('click', ()=>{tranceGrid();})
+    gridTranceBtn.addEventListener('click', ()=>{tranceGrid();})
 }
 
 
@@ -80,22 +80,21 @@ function shadeGrid(){
     })
 
 }
-// function tranceGrid(condition=false){
-//     const tranceColor = ['#fd00ff','#fdff00','#00ff38', '#00f9ff', '#3c00ff']
-//     let random = Math.floor(Math.random()*tranceColor.length);
-//     var gridBox = document.querySelectorAll('.grid');
-//     Array.from(gridBox).forEach((item)=>{
-//     item.addEventListener('mouseenter', (event)=>{
-//     event.target.style.backgroundColor = `${tranceColor[random]}`;
-//     event.target.style.opacity=1;
-//     setTimeout(tranceGrid,50);
-//     })
-// })
-// }
+function tranceGrid(){
+    const tranceColor = ['#fd00ff','#fdff00','#00ff38', '#00f9ff', '#3c00ff']
+    var gridBox = document.querySelectorAll('.grid');
+    Array.from(gridBox).forEach((item)=>{
+    let random = Math.floor(Math.random()*tranceColor.length);
+    item.addEventListener('mouseenter', (event)=>{
+    event.target.style.backgroundColor = `${tranceColor[random]}`;
+    event.target.style.opacity=1;
+    })
+})
+}
 
 // window scroll
-// window.addEventListener('scroll', ()=>{
-//     const optionsList = document.querySelector('.options');
-//     optionsList.classList.toggle('animate__animated');
-//     optionsList.classList.toggle('animate__backInUp');
-// })
+window.addEventListener('scroll', ()=>{
+    const optionsList = document.querySelector('.options');
+    optionsList.classList.toggle('animate__animated');
+    optionsList.classList.toggle('animate__backInUp');
+})

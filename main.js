@@ -92,3 +92,10 @@ function shadeGrid(){
 //     })
 // })
 // }
+
+// window scroll
+// window.addEventListener('scroll', ()=>{
+//     const optionsList = document.querySelector('.options');
+//     optionsList.classList.toggle('animate__animated');
+//     optionsList.classList.toggle('animate__backInUp');
+// })
